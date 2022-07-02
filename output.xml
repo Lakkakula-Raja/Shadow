@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220702 15:13:22.968" rpa="false" schemaversion="2">
+<suite id="s1" name="TestCase8" source="B:\2.L&amp;T Technology Services InternShip\shadow project\midreview\TestSuite\TestCase8.robot">
+<test id="s1-t1" name="4G LTE">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220702 15:13:23.359" endtime="20220702 15:13:23.359"/>
+</kw>
+<kw name="Open DataSettings Application" library="DataSettings_kw">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${DataSetting_package}</arg>
+<arg>appActivity=${DataSetting_Launcher}</arg>
+<arg>noReset=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220702 15:13:23.359" endtime="20220702 15:13:33.029"/>
+</kw>
+<status status="PASS" starttime="20220702 15:13:23.359" endtime="20220702 15:13:33.029"/>
+</kw>
+<kw name="Network set to" library="DataSettings_kw">
+<arg>LTE/3G/2G (auto connect)</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="Network mode"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:13:33.029" level="INFO">Clicking element '//android.widget.TextView[@text="Network mode"]'.</msg>
+<status status="PASS" starttime="20220702 15:13:33.029" endtime="20220702 15:13:34.466"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.CheckedTextView[@text="${Mode}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:13:34.482" level="INFO">Clicking element '//android.widget.CheckedTextView[@text="LTE/3G/2G (auto connect)"]'.</msg>
+<status status="PASS" starttime="20220702 15:13:34.466" endtime="20220702 15:13:36.341"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton[@content-desc="Navigate up"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:13:36.341" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<status status="PASS" starttime="20220702 15:13:36.341" endtime="20220702 15:13:36.591"/>
+</kw>
+<status status="PASS" starttime="20220702 15:13:33.029" endtime="20220702 15:13:36.591"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220702 15:13:36.606" endtime="20220702 15:13:37.106"/>
+</kw>
+<status status="PASS" starttime="20220702 15:13:23.359" endtime="20220702 15:13:37.106"/>
+</test>
+<test id="s1-t2" name="APN set to &quot;IPv4 only&quot;">
+<kw name="Open DataSettings Application" library="DataSettings_kw">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${DataSetting_package}</arg>
+<arg>appActivity=${DataSetting_Launcher}</arg>
+<arg>noReset=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220702 15:13:37.106" endtime="20220702 15:13:46.698"/>
+</kw>
+<status status="PASS" starttime="20220702 15:13:37.106" endtime="20220702 15:13:46.698"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:13:47.713" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220702 15:13:46.698" endtime="20220702 15:13:47.713"/>
+</kw>
+<kw name="GoTo APN" library="DataSettings_kw">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="Access Point Names"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:13:47.713" level="INFO">Clicking element '//android.widget.TextView[@text="Access Point Names"]'.</msg>
+<status status="PASS" starttime="20220702 15:13:47.713" endtime="20220702 15:13:48.416"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:13:50.431" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:13:48.416" endtime="20220702 15:13:50.431"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="Vodafone Mobile connect"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:13:50.431" level="INFO">Clicking element '//android.widget.TextView[@text="Vodafone Mobile connect"]'.</msg>
+<status status="PASS" starttime="20220702 15:13:50.431" endtime="20220702 15:13:50.634"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:13:52.650" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:13:50.634" endtime="20220702 15:13:52.650"/>
+</kw>
+<kw name="Scroll" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="MMS port"]</arg>
+<arg>//android.widget.TextView[@text="Server"]</arg>
+<doc>Scrolls from one element to another
+Key attributes for arbitrary elements are `id` and `name`. See
+`introduction` for details about locating elements.</doc>
+<status status="PASS" starttime="20220702 15:13:52.650" endtime="20220702 15:13:54.305"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:13:56.321" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:13:54.305" endtime="20220702 15:13:56.321"/>
+</kw>
+<kw name="Scroll" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="APN type"]</arg>
+<arg>//android.widget.TextView[@text="MMS port"]</arg>
+<doc>Scrolls from one element to another
+Key attributes for arbitrary elements are `id` and `name`. See
+`introduction` for details about locating elements.</doc>
+<status status="PASS" starttime="20220702 15:13:56.321" endtime="20220702 15:13:58.008"/>
+</kw>
+<status status="PASS" starttime="20220702 15:13:47.713" endtime="20220702 15:13:58.008"/>
+</kw>
+<kw name="APN set to" library="DataSettings_kw">
+<arg>IPv4</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="APN protocol"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:13:58.023" level="INFO">Clicking element '//android.widget.TextView[@text="APN protocol"]'.</msg>
+<status status="PASS" starttime="20220702 15:13:58.008" endtime="20220702 15:13:58.508"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:00.523" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:13:58.508" endtime="20220702 15:14:00.523"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.CheckedTextView[@text="${APN}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:00.523" level="INFO">Clicking element '//android.widget.CheckedTextView[@text="IPv4"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:00.523" endtime="20220702 15:14:01.897"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:03.912" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:14:01.897" endtime="20220702 15:14:03.912"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageView[@content-desc="More options"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:03.912" level="INFO">Clicking element '//android.widget.ImageView[@content-desc="More options"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:03.912" endtime="20220702 15:14:04.162"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:06.178" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:14:04.162" endtime="20220702 15:14:06.178"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="Save"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:06.178" level="INFO">Clicking element '//android.widget.TextView[@text="Save"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:06.178" endtime="20220702 15:14:07.615"/>
+</kw>
+<status status="PASS" starttime="20220702 15:13:58.008" endtime="20220702 15:14:07.615"/>
+</kw>
+<kw name="Back From APN" library="DataSettings_kw">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton[@content-desc="Navigate up"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:07.630" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:07.615" endtime="20220702 15:14:08.771"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:10.786" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:14:08.771" endtime="20220702 15:14:10.786"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton[@content-desc="Navigate up"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:10.786" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:10.786" endtime="20220702 15:14:10.973"/>
+</kw>
+<status status="PASS" starttime="20220702 15:14:07.615" endtime="20220702 15:14:10.973"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220702 15:14:10.973" endtime="20220702 15:14:11.504"/>
+</kw>
+<status status="PASS" starttime="20220702 15:13:37.106" endtime="20220702 15:14:11.504"/>
+</test>
+<test id="s1-t3" name="test with HTTP protocol: Calculate the Downlink speed">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220702 15:14:11.504" endtime="20220702 15:14:11.504"/>
+</kw>
+<kw name="open chrome" library="chrome_kw">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${Chrome_package}</arg>
+<arg>appActivity=${Chrome_Launcher}</arg>
+<arg>noReset=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220702 15:14:11.504" endtime="20220702 15:14:23.970"/>
+</kw>
+<status status="PASS" starttime="20220702 15:14:11.504" endtime="20220702 15:14:23.970"/>
+</kw>
+<kw name="search for http downlode" library="chrome_kw">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=search_box_text</arg>
+<arg>https://fastest.fish/test-files</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:23.970" level="INFO">Typing text 'https://fastest.fish/test-files' into text field 'id=search_box_text'</msg>
+<status status="PASS" starttime="20220702 15:14:23.970" endtime="20220702 15:14:25.189"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:26.204" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220702 15:14:25.189" endtime="20220702 15:14:26.204"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>66</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20220702 15:14:26.204" endtime="20220702 15:14:27.672"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:29.688" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:14:27.672" endtime="20220702 15:14:29.688"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton[@content-desc="More options"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:29.688" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="More options"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:29.688" endtime="20220702 15:14:32.687"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:34.702" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:14:32.687" endtime="20220702 15:14:34.702"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="Desktop site"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:34.702" level="INFO">Clicking element '//android.widget.TextView[@text="Desktop site"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:34.702" endtime="20220702 15:14:34.999"/>
+</kw>
+<status status="PASS" starttime="20220702 15:14:23.970" endtime="20220702 15:14:34.999"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${time1}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220702 15:14:34.999" level="INFO">${time1} = 2022-07-02 15:14:34.999</msg>
+<status status="PASS" starttime="20220702 15:14:34.999" endtime="20220702 15:14:34.999"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${time1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 15:14:34.999" endtime="20220702 15:14:34.999"/>
+</kw>
+<kw name="make downlode http" library="chrome_kw">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@text="10MB"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:35.015" level="INFO">Clicking element '//android.widget.Button[@text="10MB"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:35.015" endtime="20220702 15:14:37.280"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Download again</arg>
+<arg>timeout=60s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20220702 15:14:37.280" endtime="20220702 15:14:39.482"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.Button[@text="Download again"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:39.498" level="INFO">Clicking element '//android.widget.Button[@text="Download again"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:39.482" endtime="20220702 15:14:41.529"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>File downloaded</arg>
+<arg>timeout=600s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20220702 15:14:41.529" endtime="20220702 15:14:41.872"/>
+</kw>
+<status status="PASS" starttime="20220702 15:14:34.999" endtime="20220702 15:14:41.872"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${time2}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220702 15:14:41.872" level="INFO">${time2} = 2022-07-02 15:14:41.872</msg>
+<status status="PASS" starttime="20220702 15:14:41.872" endtime="20220702 15:14:41.872"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${time2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 15:14:41.872" endtime="20220702 15:14:41.872"/>
+</kw>
+<kw name="open new tab" library="chrome_kw">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton[@content-desc="More options"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:41.872" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="More options"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:41.872" endtime="20220702 15:14:43.903"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="New tab"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220702 15:14:43.903" level="INFO">Clicking element '//android.widget.TextView[@text="New tab"]'.</msg>
+<status status="PASS" starttime="20220702 15:14:43.903" endtime="20220702 15:14:44.169"/>
+</kw>
+<status status="PASS" starttime="20220702 15:14:41.872" endtime="20220702 15:14:44.169"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 15:14:46.184" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 15:14:44.169" endtime="20220702 15:14:46.184"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${time2}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220702 15:14:46.184" level="INFO">${time2} = 2022-07-02 15:14:46.184</msg>
+<status status="PASS" starttime="20220702 15:14:46.184" endtime="20220702 15:14:46.184"/>
+</kw>
+<kw name="Subtract Date From Date" library="DateTime">
+<var>${time}</var>
+<arg>${time2}</arg>
+<arg>${time1}</arg>
+<doc>Subtracts date from another date and returns time between.</doc>
+<msg timestamp="20220702 15:14:46.184" level="INFO">${time} = 11.185</msg>
+<status status="PASS" starttime="20220702 15:14:46.184" endtime="20220702 15:14:46.184"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${res}</var>
+<arg>${time} % 100</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220702 15:14:46.184" level="INFO">${res} = 11.185</msg>
+<status status="PASS" starttime="20220702 15:14:46.184" endtime="20220702 15:14:46.184"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>10MB per ${res} sec</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 15:14:46.184" endtime="20220702 15:14:46.184"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220702 15:14:46.199" endtime="20220702 15:14:46.637"/>
+</kw>
+<status status="PASS" starttime="20220702 15:14:11.504" endtime="20220702 15:14:46.637"/>
+</test>
+<doc>4G LTE IPv4 test with HTTP protocol: APN set to "IPv4 only".</doc>
+<status status="PASS" starttime="20220702 15:13:22.968" endtime="20220702 15:14:46.637"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="TestCase8">TestCase8</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
