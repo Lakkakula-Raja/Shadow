@@ -1,20 +1,15 @@
 *** Settings ***
-
-Library     AppiumLibrary
-Library     SeleniumLibrary
-Library     OperatingSystem
-Library     AutoItLibrary
-Library     DateTime
-Library     BuiltIn
-
-Resource        ../var/chrome_var.robot
+Documentation       Calculate the Downlink speed via HTTP protocol on LTE Network
 Resource        ../var/device_var.robot
 Resource        ../Res/chrome_kw.robot
+Resource        ../Res/DataSettings_kw.robot
 #Test Teardown   Close Application
 
 *** Test Cases ***
-
-Calculate the Downlink speed via HTTP protocol on LTE Network
+4G LTE
+    Open DataSettings Application
+    Network set to    LTE/3G/2G (auto connect)
+Calculate the Downlink speed via HTTP protocol
     Set Selenium Speed    10s
     open chrome
     search for http downlode
@@ -30,5 +25,5 @@ Calculate the Downlink speed via HTTP protocol on LTE Network
     ${res}      Evaluate    ${time} % 100
     Log To Console    10MB per ${res} sec
 
-TEST CASE 1 - Calculate the UPlink speed via HTTP protocol on LTE Network
-    Log To Console    "konda"
+Calculate the UPlink speed via HTTP protocol
+    Log To Console    "not need Calculate the UPlink speed via HTTP protocol"

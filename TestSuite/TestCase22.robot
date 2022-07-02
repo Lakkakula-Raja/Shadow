@@ -5,10 +5,16 @@ Resource        ../Res/DataSettings_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***
-TEST CASE 22 - Bidirectional data transfer with LTE bands
+LTE bands
     Open DataSettings Application
     Network set to    LTE/3G/2G (auto connect)
-    Open Message Application
-    Enter The Number        8919111420
-    Enter The Message       Test SMS while on data connection with LTE bands
-    Send The Message
+
+APN set to "IPv4 and IPv6"
+    Open DataSettings Application
+    GoTo APN
+    APN set to    IPv4/IPv6
+    Back From APN
+
+Bidirectional data transfer
+    Log To Console    "sending and reciving Data at which ipv4/ipv6"
+

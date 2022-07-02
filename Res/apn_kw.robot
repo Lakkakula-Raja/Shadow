@@ -1,18 +1,24 @@
 *** Settings ***
-Documentation       4G LTE attach and connection, IPv4
 Resource        ../Res/DataSettings_kw.robot
-Test Teardown   Close Application
 
 *** Test Cases ***
-4G LTE
+
+APN set to "IPv6 only".
     Set Selenium Speed    10s
     Open DataSettings Application
-    Network set to    LTE/3G/2G (auto connect)
+    GoTo APN
+    APN set to    IPv6
+    Back From APN
 
 APN set to "IPv4 only"
     Open DataSettings Application
+    Sleep    1s
     GoTo APN
     APN set to    IPv4
     Back From APN
-attach and connection
-    Log To Console    "Dont know what to do"
+
+APN set to "IPv4 and IPv6"
+    Open DataSettings Application
+    GoTo APN
+    APN set to    IPv4/IPv6
+    Back From APN

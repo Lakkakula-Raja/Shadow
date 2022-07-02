@@ -1,9 +1,12 @@
 *** Settings ***
-Documentation  Bidirectional data transfer with WCDMA bands
+Documentation  Calculate the Uplink speed with FTP protocol on 3G Network
 Resource        ../Res/DataSettings_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***
-TEST CASE 6 - Calculate the Uplink speed with FTP protocol on 3G Network
+3G Network
     Open DataSettings Application
     Network set to    3G/2G (auto connect)
+
+Calculate the Uplink speed with FTP protocol
+    Log To Console    "Calculate the Uplink speed with FTP protocol"

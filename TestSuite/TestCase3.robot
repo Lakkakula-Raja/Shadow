@@ -4,6 +4,9 @@ Resource        ../Res/DataSettings_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***
-TEST CASE 3 - Calculate the Downlink speed with FTP protocol on 4G Network
+4G LTE
     Open DataSettings Application
     Network set to    LTE/3G/2G (auto connect)
+
+Calculate the Downlink speed with FTP protocol
+    Log To Console    "Calculate the Downlink speed with FTP protocol "

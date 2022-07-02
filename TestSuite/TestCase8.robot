@@ -13,7 +13,6 @@ Test Teardown   Close Application
 
 APN set to "IPv4 only"
     Open DataSettings Application
-    Sleep    1s
     GoTo APN
     APN set to    IPv4
     Back From APN
@@ -28,7 +27,6 @@ test with HTTP protocol: Calculate the Downlink speed
     ${time2}   Get Current Date
     Log To Console    ${time2}
     open new tab
-    Sleep   2s
     ${time2}   Get Current Date
     ${time}     Subtract Date From Date     ${time2}        ${time1}
     ${res}      Evaluate    ${time} % 100
