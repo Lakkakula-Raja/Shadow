@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation  Bidirectional data transfer with WCDMA bands
-Resource        ../Res/message_kw.robot
-Resource        ../Res/DataSettings_kw.robot
+Resource        ../Res/userdef_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***

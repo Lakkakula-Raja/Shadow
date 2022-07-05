@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation  Test MO call while on data connection with LTE bands
-Resource        ../Res/phone_kw.robot
-Resource        ../Res/DataSettings_kw.robot
+Resource        ../Res/userdef_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***

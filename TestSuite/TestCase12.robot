@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       4G LTE Ipv4 and IPv6 test with FTP protocol: APN set to "IPv4 and IPv6".
-Resource        ../Res/DataSettings_kw.robot
+Resource        ../Res/userdef_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***

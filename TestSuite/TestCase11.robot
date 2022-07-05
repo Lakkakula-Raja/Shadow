@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       4G LTE IPv4 test with FTP protocol: APN set to "IPv4 only".
-Resource        ../Res/DataSettings_kw.robot
+Resource        ../Res/userdef_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***

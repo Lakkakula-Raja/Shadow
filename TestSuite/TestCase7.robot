@@ -1,9 +1,6 @@
 *** Settings ***
 Documentation       4G LTE IPv6 test with HTTP protocol: APN set to "IPv6 only".
-Resource        ../Res/DataSettings_kw.robot
-Resource        ../Res/apn_kw.robot
-Resource        ../var/chrome_var.robot
-Resource        ../Res/chrome_kw.robot
+Resource        ../Res/userdef_kw.robot
 #Test Teardown   Close Application
 
 *** Test Cases ***
@@ -19,15 +16,17 @@ APN set to "IPv6 only".
     Back From APN
 
 test with HTTP protocol: Calculate the Downlink speed
-    Set Selenium Speed    10s
+    Set Selenium Speed    60s
     open chrome
+    open new tab
     search for http downlode
+    Sleep    30s
     ${time1}    Get Current Date
     Log To Console    ${time1}
     make downlode http
     ${time2}   Get Current Date
     Log To Console    ${time2}
-    open new tab
+
     ${time2}   Get Current Date
     ${time}     Subtract Date From Date     ${time2}        ${time1}
     ${res}      Evaluate    ${time} % 100

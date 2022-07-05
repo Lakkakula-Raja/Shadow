@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       4G LTE attach and connection, IPv4
-Resource        ../Res/DataSettings_kw.robot
+Resource        ../Res/userdef_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***
@@ -15,4 +15,10 @@ APN set to "IPv4 only"
     APN set to    IPv4
     Back From APN
 attach and connection
-    Log To Console    "Dont know what to do"
+    open chrome
+    AppiumLibrary.Click Element    id=menu_button
+    AppiumLibrary.Click Element     id=new_tab_menu_id
+    AppiumLibrary.Input Text    id=search_box_text    https://test-ipv6.com/
+    AppiumLibrary.press keycode           66
+    AppiumLibrary.Wait Until Page Contains    Your IPv4 address on the public Internet appears to be     timeout=60s
+    Set Screenshot Directory    ${EXECDIR}${/}Screenshots

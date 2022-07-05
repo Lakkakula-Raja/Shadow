@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation  This script opens dialer on phone
-Resource        ../Res/phone_kw.robot
-Resource        ../Res/DataSettings_kw.robot
+Resource        ../Res/userdef_kw.robot
 Test Teardown   Close Application
 
 *** Test Cases ***
