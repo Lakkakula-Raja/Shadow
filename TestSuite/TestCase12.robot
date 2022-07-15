@@ -1,19 +1,15 @@
 *** Settings ***
-Documentation       4G LTE Ipv4 and IPv6 test with FTP protocol: APN set to "IPv4 and IPv6".
-Resource        ../Res/userdef_kw.robot
-Test Teardown   Close Application
+Documentation       4G LTE Ipv4 and IPv6 test with HTTP protocol: APN set to "IPv4 and IPv6".
+Resource    ../Resource/apps/Settings_kw.resource
+Resource    ../Resource/apps/FTP_kw.resource
 
 *** Test Cases ***
-4G LTE
-    Set Selenium Speed    10s
+TEST CASE 12 : 4G LTE Ipv4 and IPv6 test with HTTP protocol: APN set to "IPv4 and IPv6".
+    Common Functionality
     Open DataSettings Application
     Network set to    LTE/3G/2G (auto connect)
-
-APN set to "IPv4 and IPv6"
     Open DataSettings Application
-    GoTo APN
     APN set to    IPv4/IPv6
-    Back From APN
-
-test with FTP protocol: Calculate the Downlink speed
-    Log To Console    "Working on it. taking from 3"
+    Launch FTP RUSH App
+    FTP download    manual_en.pdf
+    Log To Console    "FTP Download"

@@ -1,32 +1,24 @@
 *** Settings ***
 Documentation       4G LTE Ipv4 and IPv6 test with HTTP protocol: APN set to "IPv4 and IPv6".
-Resource        ../Res/userdef_kw.robot
-Test Teardown   Close Application
+Resource    ../Resource/apps/Settings_kw.resource
+Resource    ../Resource/apps/Chrome_kw.resource
 
 *** Test Cases ***
-4G LTE
-    Set Selenium Speed    10s
+TEST CASE 9 : 4G LTE Ipv4 and IPv6 test with HTTP protocol: APN set to "IPv4 and IPv6".
+    Common Functionality
     Open DataSettings Application
     Network set to    LTE/3G/2G (auto connect)
-
-APN set to "IPv4 and IPv6"
     Open DataSettings Application
-    GoTo APN
     APN set to    IPv4/IPv6
-    Back From APN
-
-test with HTTP protocol: Calculate the Downlink speed
-    Set Selenium Speed    10s
-    open chrome
-    open new tab
-    search for http downlode
+    Set Selenium Speed    60s
+    Open chrome Application
+    open url   https://fastest.fish/test-files
     Sleep    30s
     ${time1}    Get Current Date
     Log To Console    ${time1}
     make downlode http
     ${time2}   Get Current Date
     Log To Console    ${time2}
-    
     ${time2}   Get Current Date
     ${time}     Subtract Date From Date     ${time2}        ${time1}
     ${res}      Evaluate    ${time} % 100

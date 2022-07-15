@@ -1,27 +1,25 @@
 *** Settings ***
-Documentation   Simultaneous Data and voice call with LTE bands
-Resource        ../Res/userdef_kw.robot
-Test Teardown   Close Application
+Documentation       Simultaneous Data and voice call with LTE bands
+Resource    ../Resource/apps/Settings_kw.resource
+Resource    ../Resource/apps/Chrome_kw.resource
+Resource    ../Resource/apps/Diler_kw.resource
 
 *** Test Cases ***
-LTE bands
+TEST CASE 20 : Simultaneous Data and voice call with LTE bands
+    Common Functionality
     Open DataSettings Application
     Network set to    LTE/3G/2G (auto connect)
-
-APN set to "IPv4 and IPv6"
+    Log To Console    "Network set To 4G"
     Open DataSettings Application
-    GoTo APN
     APN set to    IPv4/IPv6
-    Back From APN
-
-Simultaneous Data and voice call
+    Log To Console    "APN set to IPv4/IPv6"
     Open Dialer Application
-    Enter The Number      8919111420
-    Make A Call
-    open chrome
-    AppiumLibrary.Click Element    id=menu_button
-    AppiumLibrary.Click Element     id=new_tab_menu_id
-    AppiumLibrary.Input Text    id=search_box_text    Lakkakula raja
-    AppiumLibrary.press keycode           66
-    AppiumLibrary.Wait Until Page Contains    View Raja Lakkakula's profile on    timeout=30s
-    Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+    Make A Call to      8919111420
+    Log To Console    "call started"
+    Open Dialer Application
+    Make A Call to      8919111420
+    open chrome Application
+    open url    Raja Lakkakula
+    Open Dialer Application
+    Disconnect The Call
+

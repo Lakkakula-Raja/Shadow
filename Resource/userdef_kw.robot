@@ -8,23 +8,23 @@ Library     BuiltIn
 Library     Collections
 
 *** Variables ***
-
+#set your device name
 ${deviceName}     RZ8T105EFQE
 
-#Chrome app variable
+#set your Chrome app variable
 ${Chrome_package}      com.android.chrome
 ${Chrome_Launcher}     com.google.android.apps.chrome.Main
 
-#data settings app variable
+#set your data settings app variable
 ${DataSetting_package}     com.remifayolle.android.datasettings
 ${DataSetting_Launcher}    com.remifayolle.android.datasettings.DataSettingsActivity
 
-#Message app variable
+#set your Message app variable
 ${message_package}     com.samsung.android.messaging
 ${message_Launcher}    com.android.mms.ui.ConversationComposer
 ${message_num}          8919111420
 
-#Diler app variable
+#set your Diler app variable
 ${dialer_package}     com.samsung.android.dialer
 ${dialer_Launcher}    com.samsung.android.dialer.DialtactsActivity
 ${dialer_num}         8919111420

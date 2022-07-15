@@ -1,11 +1,14 @@
-* Settings *
-Resource    ../Res/Android/resCalender.robot
-Library  AppiumLibrary
-* Test Cases *
-Take Pic
-    ${time}     Evaluate    8.78+1
-    ${res}      Evaluate    ${time} % 100
+*** Settings ***
+Documentation       4G LTE IPv6 test with HTTP protocol: APN set to "IPv6 only".
+Resource        ../Resource/apps/Settings_kw.resource
+#Test Teardown   Close Application
 
-    Log To Console    10MB per ${res}
+*** Test Cases ***
+TEST CASE:
+    Common Functionality
+    Open DataSettings Application
+    Network set to    LTE/3G/2G (auto connect)
+    APN set to    IPv6
+    Close Application
 
 
