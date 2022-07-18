@@ -29,6 +29,7 @@ open url
     AppiumLibrary.Click Element    //android.widget.ImageButton[@content-desc="More options"]
     Sleep    5s
     AppiumLibrary.Click Element    //android.widget.TextView[@text="Desktop site"]
+    Sleep    10s
     AppiumLibrary.Capture Page Screenshot
     #AppiumLibrary.Click Element    //android.widget.Button[text="Download"]
     #AppiumLibrary.Wait Until Page Contains    ${NAME} is on Facebook    timeout=60s

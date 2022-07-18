@@ -11,7 +11,4 @@ Library     Collections
 #set your device name
 ${deviceName}     RZ8T105EFQE
 
-*** Keywords ***
-Common Functionality
-    Set Selenium Implicit Wait    30s
-    Set Screenshot Directory    ${EXECDIR}${/}screenshot
+

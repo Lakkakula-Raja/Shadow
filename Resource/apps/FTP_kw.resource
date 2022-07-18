@@ -15,7 +15,8 @@ FTP download
     [Arguments]     ${file}
     Sleep    10s
     AppiumLibrary.Click Element    //android.widget.TextView[@text="Demo"]
-    Sleep    10s
+    AppiumLibrary.Wait Until Page Contains    download     timeout=100s
+    Sleep    2s
     AppiumLibrary.Click Element    //android.widget.TextView[@text="download"]
     Sleep    10s
     AppiumLibrary.Click Element         //android.widget.TextView[@text="${file}"]
